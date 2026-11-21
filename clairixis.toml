@@ -1,0 +1,206 @@
+# What this repository offers to Clairixis: one [[script]] per file.
+# See README.md for what each field means.
+
+[[script]]
+name = "Disk space"
+path = "system/disk_usage.sh"
+description = "Shows how full each filesystem is, then the largest directories under a directory. Run it as root to count what the login account cannot read."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "directory"
+  description = "Where to look for large directories"
+  kind = "text"
+  default = "/var"
+
+  [[script.parameter]]
+  name = "count"
+  description = "How many directories to list"
+  kind = "number"
+  default = "15"
+
+[[script]]
+name = "Largest files"
+path = "system/large_files.sh"
+description = "Lists the largest files under a directory, without leaving its filesystem. Run it as root to see every file."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "directory"
+  description = "Where to look"
+  kind = "text"
+  default = "/var"
+
+  [[script.parameter]]
+  name = "megabytes"
+  description = "Smallest size to list, in megabytes"
+  kind = "number"
+  default = "100"
+
+  [[script.parameter]]
+  name = "count"
+  description = "How many files to list"
+  kind = "number"
+  default = "20"
+
+[[script]]
+name = "Memory and what uses it"
+path = "system/memory.sh"
+description = "Shows memory and swap, then the processes that hold the most memory."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "count"
+  description = "How many processes to list"
+  kind = "number"
+  default = "15"
+
+[[script]]
+name = "Processor and what uses it"
+path = "system/processor.sh"
+description = "Shows the load, then the processes that use the most processor time now."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "count"
+  description = "How many processes to list"
+  kind = "number"
+  default = "15"
+
+[[script]]
+name = "Clock and time synchronisation"
+path = "system/time_sync.sh"
+description = "Shows the time of the host, its time zone, and whether its clock is kept in step."
+min_version = "0.1.0"
+
+[[script]]
+name = "Is a restart needed?"
+path = "system/reboot_needed.sh"
+description = "Says whether the host waits for a restart to finish its updates, and compares the kernel that runs with the newest one installed."
+min_version = "0.1.0"
+
+[[script]]
+name = "Restart the host"
+path = "system/reboot.sh"
+description = "Restarts the host after a delay, which leaves the run time to finish and people time to be warned. Run it as root."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "minutes"
+  description = "Minutes to wait before restarting"
+  kind = "number"
+  default = "1"
+
+[[script]]
+name = "Empty the package cache"
+path = "system/clean_package_cache.sh"
+description = "Removes the packages the package manager downloaded and keeps, on any supported system, and shows the space before and after. Run it as root."
+min_version = "0.1.0"
+
+[[script]]
+name = "Failed services"
+path = "services/failed_units.sh"
+description = "Lists the systemd units that failed. The run fails on a host that has any, so a schedule of it tells which hosts need a look."
+min_version = "0.1.0"
+
+[[script]]
+name = "State of a service"
+path = "services/service_status.sh"
+description = "Shows whether a systemd unit runs, since when, and its last lines of log."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "unit"
+  description = "The unit, for example nginx or sshd"
+  kind = "text"
+  required = true
+
+[[script]]
+name = "Restart a service"
+path = "services/service_restart.sh"
+description = "Restarts a systemd unit and shows its state afterwards. The run fails if the unit does not come back. Run it as root."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "unit"
+  description = "The unit, for example nginx or sshd"
+  kind = "text"
+  required = true
+
+[[script]]
+name = "Errors in the journal"
+path = "services/journal_errors.sh"
+description = "Shows what the system journal recorded as an error over the last hours. Run it as root to read the journal of every service."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "hours"
+  description = "How many hours back"
+  kind = "number"
+  default = "24"
+
+[[script]]
+name = "Containers"
+path = "services/containers.sh"
+description = "Lists the containers of Docker or Podman, running or not, and the space their images and volumes take. Run it as root where the login account may not ask."
+min_version = "0.1.0"
+
+[[script]]
+name = "Listening ports"
+path = "network/listening_ports.sh"
+description = "Lists the ports the host listens on. Run it as root to see which program holds each."
+min_version = "0.1.0"
+
+[[script]]
+name = "Reach an address from the host"
+path = "network/check_address.sh"
+description = "Asks a web address from the host and shows the answer code and the time it took: what the host itself can reach, not the controller."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "address"
+  description = "The address to ask, for example https://example.com/health"
+  kind = "text"
+  required = true
+
+[[script]]
+name = "When a certificate expires"
+path = "network/certificate.sh"
+description = "Reads the certificate a TLS service presents and says when it expires. The run fails when that is within the number of days given, so a schedule of it warns in time."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "address"
+  description = "Name and port of the service, as seen from the host"
+  kind = "text"
+  default = "localhost:443"
+
+  [[script.parameter]]
+  name = "days"
+  description = "Fail when the certificate expires within this many days"
+  kind = "number"
+  default = "30"
+
+[[script]]
+name = "Firewall rules"
+path = "network/firewall.sh"
+description = "Shows the rules of the firewall in use: firewalld, ufw, nftables or iptables. Run it as root."
+min_version = "0.1.0"
+
+[[script]]
+name = "Recent logins"
+path = "security/logins.sh"
+description = "Shows the last logins and who is logged in now."
+min_version = "0.1.0"
+
+  [[script.parameter]]
+  name = "count"
+  description = "How many logins to list"
+  kind = "number"
+  default = "20"
+
+[[script]]
+name = "Accounts that can log in"
+path = "security/accounts.sh"
+description = "Lists the accounts that have a login shell, and the members of the groups that give administrator rights."
+min_version = "0.1.0"
