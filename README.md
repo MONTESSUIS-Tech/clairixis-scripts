@@ -68,6 +68,7 @@ launched with.
 
 ```
 clairixis.toml   what this repository offers: one entry per script
+LICENSE          GNU General Public License, version 3 or later
 system/          disks, memory, processor, clock, restarts, package cache
 services/        systemd units, the journal, containers
 network/         ports, addresses, certificates, the firewall
@@ -135,3 +136,21 @@ A parameter is a value asked when the script is launched:
 
 Add the file under the directory it belongs to, list it in
 `clairixis.toml`, and add its line to the table above.
+
+## License
+
+Copyright (C) 2026 MONTESSUIS Tech.
+
+These scripts are free software: you can redistribute them and modify
+them under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version. Whoever passes on a changed copy passes
+it on under the same terms.
+
+They are distributed in the hope that they will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See [LICENSE](LICENSE) for the full
+text.
+
+This is the license of the scripts in this repository, not the license
+of Clairixis.
