@@ -1,3 +1,7 @@
+# Clairixis scripts: ready-made scripts for Clairixis.
+# Copyright (C) 2026 MONTESSUIS Tech
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set -u
 echo "Load: $(cut -d ' ' -f 1-3 /proc/loadavg) on $(grep -c ^processor /proc/cpuinfo) processor(s)"
 echo

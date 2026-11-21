@@ -1,3 +1,7 @@
+# Clairixis scripts: ready-made scripts for Clairixis.
+# Copyright (C) 2026 MONTESSUIS Tech
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set -u
 find "$DIRECTORY" -xdev -type f -size +"${MEGABYTES%.*}"M -exec du -k {} + 2>/dev/null |
     sort -rn | head -n "$COUNT" |

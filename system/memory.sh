@@ -1,3 +1,7 @@
+# Clairixis scripts: ready-made scripts for Clairixis.
+# Copyright (C) 2026 MONTESSUIS Tech
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set -u
 free -m 2>/dev/null || grep -E '^(MemTotal|MemAvailable|SwapTotal|SwapFree):' /proc/meminfo
 echo

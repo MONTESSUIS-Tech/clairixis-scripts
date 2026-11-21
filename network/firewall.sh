@@ -1,3 +1,7 @@
+# Clairixis scripts: ready-made scripts for Clairixis.
+# Copyright (C) 2026 MONTESSUIS Tech
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set -u
 if command -v firewall-cmd >/dev/null 2>&1 && firewall-cmd --state >/dev/null 2>&1; then
     firewall-cmd --list-all-zones

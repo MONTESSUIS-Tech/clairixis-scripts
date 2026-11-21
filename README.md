@@ -133,6 +133,9 @@ A parameter is a value asked when the script is launched:
   a run is kept and shown as it is.
 - A script that changes something says so in its description, and does
   only that.
+- Each file begins with the three lines that name these scripts, their
+  copyright and their license (`SPDX-License-Identifier: GPL-3.0-or-later`):
+  copy them from any script here.
 
 Add the file under the directory it belongs to, list it in
 `clairixis.toml`, and add its line to the table above.

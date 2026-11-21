@@ -1,3 +1,7 @@
+# Clairixis scripts: ready-made scripts for Clairixis.
+# Copyright (C) 2026 MONTESSUIS Tech
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set -u
 space() { df -hP / | awk 'NR == 2 { print $4 " free on /" }'; }
 echo "Before: $(space)"
