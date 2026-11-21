@@ -142,7 +142,7 @@ Add the file under the directory it belongs to, list it in
 
 ## License
 
-Copyright (C) 2026 MONTESSUIS Tech.
+Copyright (C) 2026 Quentin MONTESSUIS (MONTESSUIS Tech).
 
 These scripts are free software: you can redistribute them and modify
 them under the terms of the GNU General Public License as published by
